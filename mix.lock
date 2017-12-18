@@ -7,7 +7,7 @@
   "ex_doc": {:hex, :ex_doc, "0.16.2", "3b3e210ebcd85a7c76b4e73f85c5640c011d2a0b2f06dcdf5acdb2ae904e5084", [:mix], [{:earmark, "~> 1.1", [hex: :earmark, optional: false]}]},
   "ezlib": {:hex, :ezlib, "1.0.2", "22004ecf553a7d831404394d5642712e2aede90522e22bd6ccc089ca410ee098", [:rebar3], []},
   "fast_tls": {:hex, :fast_tls, "1.0.15", "96546e6a8b8384fbbcddf435c4c42cf2c0a3dc1858c3c9c2e62a74ae1ddd526a", [:rebar3], [{:p1_utils, "1.0.9", [hex: :p1_utils, optional: false]}]},
-  "fast_xml": {:hex, :fast_xml, "1.1.25", "1c68917f6aa5a7546cb70669bd0ddbddc67dd9e545c231f2b46b0a69e5dd7c95", [:make, :mix, :rebar3], [{:elixir_make, "~> 0.4", [hex: :elixir_make, repo: "hexpm", optional: false]}, {:p1_utils, "~> 1.0", [hex: :p1_utils, repo: "hexpm", optional: false]}], "hexpm:findaplayer"},
+  "fast_xml": {:git, "https://github.com/processone/fast_xml.git", "251d5caad0a9a25a9e7cebc8d5beeb63e0994b3f", [tag: "1.1.25"]},
   "fast_yaml": {:hex, :fast_yaml, "1.0.10", "ce5d52b77cb21968c8b73aa29b39f56a4ffd7e1e11f853d5597e7277858f155e", [:rebar3], [{:p1_utils, "1.0.9", [hex: :p1_utils, optional: false]}]},
   "fs": {:hex, :fs, "2.12.0", "ad631efacc9a5683c8eaa1b274e24fa64a1b8eb30747e9595b93bec7e492e25e", [:rebar3], [], "hexpm"},
   "goldrush": {:hex, :goldrush, "0.1.9", "f06e5d5f1277da5c413e84d5a2924174182fb108dabb39d5ec548b27424cd106", [:rebar3], []},

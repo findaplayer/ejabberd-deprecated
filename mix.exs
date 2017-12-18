@@ -62,7 +62,7 @@ defmodule Ejabberd.Mixfile do
   defp deps do
     [{:lager, "~> 3.4.0"},
      {:p1_utils, "~> 1.0", override: true},
-     {:fast_xml, "~> 1.1.25", organization: "findaplayer", override: true},
+     {:fast_xml, github: "processone/fast_xml", tag: "1.1.25", override: true},
      {:xmpp, github: "findaplayer/xmpp", tag: "fap"},
      {:cache_tab, "~> 1.0"},
      {:stringprep, "~> 1.0"},
