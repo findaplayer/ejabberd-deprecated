@@ -3,7 +3,7 @@ defmodule Ejabberd.Mixfile do
 
   def project do
     [app: :ejabberd,
-     version: "17.9.0",
+     version: "17.11.0",
      description: description(),
      elixir: "~> 1.4",
      elixirc_paths: ["lib"],
@@ -43,8 +43,11 @@ defmodule Ejabberd.Mixfile do
 
   defp erlc_options do
     # Use our own includes + includes from all dependencies
-    includes = ["include"] ++ deps_include(["fast_xml", "xmpp", "p1_utils"])
-    [:debug_info, {:d, :ELIXIR_ENABLED}] ++ cond_options() ++ Enum.map(includes, fn(path) -> {:i, path} end) ++
+    #includes = ["include"] ++ deps_include(["fast_xml", "xmpp", "p1_utils"])
+    #[:debug_info, {:d, :ELIXIR_ENABLED}] ++ cond_options() ++ Enum.map(includes, fn(path) -> {:i, path} end) ++
+
+    [:debug_info, {:d, :ELIXIR_ENABLED}, {:i, "../../deps/fast_xml/include"}, {:i, "../../deps/p1_utils/include"}, {:i, "../../deps/xmpp/include"}] ++
+
     if_function_exported(:crypto, :strong_rand_bytes, 1, [{:d, :STRONG_RAND_BYTES}]) ++
     if_function_exported(:rand, :uniform, 1, [{:d, :RAND_UNIFORM}]) ++
     if_function_exported(:gb_sets, :iterator_from, 2, [{:d, :GB_SETS_ITERATOR_FROM}]) ++
@@ -58,9 +61,9 @@ defmodule Ejabberd.Mixfile do
 
   defp deps do
     [{:lager, "~> 3.4.0"},
-     {:p1_utils, "~> 1.0"},
-     {:fast_xml, "~> 1.1"},
-     {:xmpp, "~> 1.1"},
+     {:p1_utils, "~> 1.0", override: true},
+     {:fast_xml, "~> 1.1.25", organization: "findaplayer", override: true},
+     {:xmpp, github: "findaplayer/xmpp", tag: "fap"},
      {:cache_tab, "~> 1.0"},
      {:stringprep, "~> 1.0"},
      {:fast_yaml, "~> 1.0"},
